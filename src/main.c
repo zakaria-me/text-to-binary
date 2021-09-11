@@ -1,10 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <fcntl.h>
-#include <unistd.h>
-#include <string.h>
 
 char* decimal_to_binary(char character, int *str_length_ptr, char* rpz_binaire){
   int result_modulo;
@@ -41,7 +36,7 @@ char* set_text_source(char input_string[]){
 
 int main(int argc, char *argv[]){
 /*   char *input_string = set_text_source(argv[1]); */
-  char character = '5';
+  char character = 'c';
   char *rpz_binaire = NULL ;
   char *final_rpztation= NULL;
   
