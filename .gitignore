@@ -3,5 +3,7 @@ src/*
 # What not to ignore
 !*.c
 !*.md
+!*.h
+!build.sh
 # Ignore details
 *test*
