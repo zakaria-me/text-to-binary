@@ -1,3 +1,7 @@
+# What to ignore
 src/*
+# What not to ignore
 !*.c
 !*.md
+# Ignore details
+*test*
