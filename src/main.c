@@ -12,6 +12,6 @@ char* set_text_source(char input_string[]){
 
 int main(int argc, char *argv[]){
 /*   char *input_string = set_text_source(argv[1]); */
-  character_to_binary('c');
+  printf("%s\n", character_to_binary('!'));
   exit(0);
 }

@@ -1,4 +1,5 @@
 #include "character-to-binary.h"
+#include <string.h>
 
 char* decimal_to_binary(char character, int *str_length_ptr, char* rpz_binaire){
   int result_modulo;
@@ -13,6 +14,7 @@ char* decimal_to_binary(char character, int *str_length_ptr, char* rpz_binaire){
     character /= 2;
     ++*(str_length_ptr);
    }    
+   rpz_binaire = add_zeros_to_binary_rpztation(rpz_binaire, str_length_ptr);
    return rpz_binaire;
 }
 
@@ -22,6 +24,15 @@ char* reverse_char_array(char *rpz_binaire, int *str_length_ptr, char* final_rpz
      final_rpztation[index] = rpz_binaire[*str_length_ptr - (index + 1)];
    }
    return final_rpztation;
+}
+
+char * add_zeros_to_binary_rpztation(char *rpz_binaire, int *str_length_ptr){
+  while(strlen(rpz_binaire) < 8){
+    rpz_binaire = realloc(rpz_binaire, sizeof(char) + 1);
+    rpz_binaire[*str_length_ptr] = '0';
+    ++*str_length_ptr;
+  }
+  return rpz_binaire;
 }
 
 char * character_to_binary(char character_to_convert){

@@ -1,5 +1,5 @@
 # What to ignore
-src/*
+#src/*
 # What not to ignore
 !*.c
 !*.md
