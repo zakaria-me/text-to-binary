@@ -23,6 +23,7 @@ char* reverse_char_array(char *rpz_binaire, int *str_length_ptr, char* final_rpz
      final_rpztation = realloc(final_rpztation, sizeof(char) + 1);
      final_rpztation[index] = rpz_binaire[*str_length_ptr - (index + 1)];
    }
+   free(rpz_binaire);
    return final_rpztation;
 }
 
@@ -47,6 +48,6 @@ char * character_to_binary(char character_to_convert){
   final_rpztation = reverse_char_array(rpz_binaire, str_length_ptr, final_rpztation); 
 
   // Display results
-  //printf("%s\n%s\n",rpz_binaire, final_rpztation);   
+  printf("%s\n", final_rpztation);   
   return final_rpztation;
 }
