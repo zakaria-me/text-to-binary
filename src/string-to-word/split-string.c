@@ -1,4 +1,3 @@
-#include <string.h>
 #include "string-to-word.h"
 #include "character-to-binary.h"
 

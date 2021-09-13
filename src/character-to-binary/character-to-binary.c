@@ -1,5 +1,4 @@
 #include "character-to-binary.h"
-#include <string.h>
 
 char* decimal_to_binary(char character, int *str_length_ptr, char* rpz_binaire){
   int result_modulo;
