@@ -15,11 +15,9 @@ void source_text_to_sentences(char * source_text_path){
   }
   char *lineptr = NULL;
   size_t n =  0;
-  int index = 0;
   while(getline(&lineptr, &n, source_text) != -1){
     printf("%s\n", lineptr);
     char * token = strtok(lineptr, "\n");
     string_to_word(token);
-    ++index;
   }
 }
