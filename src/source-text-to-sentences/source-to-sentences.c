@@ -15,9 +15,19 @@ void source_text_to_sentences(char * source_text_path){
   }
   char *lineptr = NULL;
   size_t n =  0;
-  while(getline(&lineptr, &n, source_text) != -1){
-    printf("%s\n", lineptr);
-    char * token = strtok(lineptr, "\n");
-    string_to_word(token);
+  // open the file to output to
+  char *output_file_name = "text-to-binary.txt";
+  FILE *output_file = fopen(output_file_name, "w");
+  if(output_file == NULL){
+    printf("Failed to open the output file! Exiting...\n");
   }
+  while(getline(&lineptr, &n, source_text) != -1){
+    fputs(lineptr, output_file);
+    fputc('\n', output_file);
+    char * token = strtok(lineptr, "\n");
+    string_to_word(token, output_file);
+  }
+  // close opened file
+  fclose(source_text);
+  fclose(output_file);
 }

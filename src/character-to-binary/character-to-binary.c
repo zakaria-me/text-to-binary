@@ -35,7 +35,7 @@ char * add_zeros_to_binary_rpztation(char *rpz_binaire, int *str_length_ptr){
   return rpz_binaire;
 }
 
-char * character_to_binary(char character_to_convert){
+char * character_to_binary(char character_to_convert, FILE * output_file){
   char *rpz_binaire = NULL ;
   char *final_rpztation= NULL;
   
@@ -47,6 +47,8 @@ char * character_to_binary(char character_to_convert){
   final_rpztation = reverse_char_array(rpz_binaire, str_length_ptr, final_rpztation); 
 
   // Display results
-  printf("%s\n", final_rpztation);   
+  // Output result to opened file
+  fputs(final_rpztation, output_file);
+  fputc('\n', output_file);
   return final_rpztation;
 }

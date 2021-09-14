@@ -1,5 +1,6 @@
 # What to ignore
 #src/*
+*.txt
 # What not to ignore
 !*.c
 !*.md
